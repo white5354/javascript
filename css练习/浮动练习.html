@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    /* 总结去除浮动的常用方法
+    一共有四种
+     */
+    /* float浮动的概念就是脱离文档流块级元素可以直接放到一行
+    float消除就是解决父级元素因为子元素的浮动导致高度变为0
+     */
+    .father {
+        width: 300px;
+        border: 1px solid #000000;
+    }
+
+    .first {
+        background-color: pink;
+        width: 100px;
+        height: 100px;
+        float: left;
+    }
+
+    .two {
+        background-color: green;
+        width: 100px;
+        height: 100px;
+        float: left;
+    }
+
+    .foot {
+        width: 400px;
+        height: 100px;
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="first">
+            一号
+        </div>
+        <div class="two">
+            二号
+        </div>
+    </div>
+    <div class="foot"></div>
+</body>
+
+</html>

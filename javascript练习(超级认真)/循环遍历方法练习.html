@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+</head>
+<style>
+
+</style>
+
+<body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+
+    <script>
+        // foreach,for-in,for-of, reduce,for, map,while,do -while 
+        // var arr = [1, 2, 3, 4];
+        // var arrobj = [{
+        //     name:'baiyun1',
+        //     age:1
+        // },{
+        //     name:'baiyun2',
+        //     age:2
+        // },{
+        //     name:'baiyun3',
+        //     age:3
+        // }]
+        // for (let i = 0; i < arrobj.length; i++) { 
+        //     console.log(arrobj[i]);
+            
+        // } 
+        // for-in(拿的是只有数组的索引)
+        // for(const key in arr){
+        //     console.log(arr[key]);
+            
+        // }
+        // for (const key in arrobj) {
+        //     if (arrobj.hasOwnProperty(key)) {
+        //         const element = arrobj[key].name;
+        //         console.log(element);
+                
+                
+        //     }
+        // }
+        // for-of拿的是数组的一个整元素，不需要写arr[key],直接写就是他所返回的值 
+        // for (const iter of arrobj) {
+        //     console.log(iter.name);
+            
+        // }
+        // for (const iter of arr) {
+        //     console.log(iter);
+            
+        // }
+        // map 就收一个函数，分别是当前值，当前索引，当前数组元素，返回一个数组，一般对原始数组进行操作可以使用map
+        // let arrcopy = arr.map((item,index,arr)=>{
+        //     console.log(item);
+        //     console.log(index);
+        //     console.log('我是当前数组',arr);
+            
+        //     if(index == 0){
+        //         return index *2
+        //     }
+        //     return index
+        // })
+        // console.log(arrcopy);
+        // for ,for-in, for-of，forEach只是对数组迭代，不返回任何值
+        // arrobj.forEach((item,index,arrobj)=>{
+        //     console.log(item);
+        //     console.log(item.name);
+        // })
+        //reduce方法是迭代方法接受两个参数，第一个参数是一个函数，他是从index=1开始，返回对数组的操作，第二个参数是一个值，
+        // 默认第一个值是多少，并且让循环从index=0开始，不写该参数index默认从第二项开始
+        // reduce求和
+    //    var arrcop = arr.reduce((pre,cur,index,arr)=>{
+    //         console.log(index);
+    //         return pre+cur
+    //                 },3)
+    //     console.log(arrcop);
+    // reduce求各项的个数
+//     let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+// let nameNum = names.reduce((pre,cur)=>{
+//   if(cur in pre){
+//     pre[cur]++
+//   }else{
+//     pre[cur] = 1 //给对象赋值
+//   }
+//   return pre
+// },{})
+// console.log(nameNum); //{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
+    //    var obj = ['spike','alien','tom']
+    //    console.log(0 in obj);//输出true
+    //    console.log('spike' in obj) //当in的对象是数组时，前面的是索引所以输出是false
+    // var arr1 = [1,2,3,4,4,5,5,5];
+    // var arr2= arr1.reduce((pre,cur)=>{
+    //     debugger
+    //     if(!pre.age==(cur.age)){
+    //         return pre.concat(cur) 
+    //     }else{
+    //         return pre
+    //     }
+    // },{})
+    //    console.log(arr2);
+    // 二维数组转一维数组
+    // let arr= [[1,2],[3,4],[5,6]]
+    // let arr1 = arr.reduce((pre,cur)=>{
+    //     return pre.concat(cur)
+    // },[]);
+    // console.log(arr1);
+    // 多维数组转一维
+    var arr1 =[[1,2,3],[4,[5,6,7,[8,9]]]]
+    var newArr = function(arr){
+       return arr.reduce((pre,cur)=>{return pre.concat(Array.isArray(cur)?newArr(cur):cur)
+        },[])
+    }
+console.log(newArr(arr1));
+
+    </script>
+</body>
+
+</html>

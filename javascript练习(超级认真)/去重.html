@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>hello</div>
+    <script>
+        // Array.from实现将类数组对象去重前提是必须有length属性，属性名必须是数字
+        // let arrayLike = {
+        //     '1': 'tom', 
+        //     '2': '65',
+        //     3: '男',
+        //     4: ['jane','john','Mary'],
+        //     length: 2
+        // }
+        // console.log(arrayLike);
+        // console.log(Array.from(arrayLike));
+        //去重1.set方式去重
+        var arr = [1,2,3,4,5,3,2,2,1]
+        // console.log(Array.from(new Set(arr)));
+        //indexOf去重
+        let newArr = [];
+        for(let a of arr){
+            if(newArr.indexOf(a)==-1){
+                newArr.push(a)
+            }
+        }
+        console.log(newArr);
+        // reduce去重
+        let newA = arr.reduce((pre,cur)=>{
+            if(!pre.includes(cur)){
+              return  pre.concat(cur)
+            }else{
+              return  pre
+            }
+        },[])
+        console.log(newA);
+        // sort排序降序返回-1，升序返回1
+        function compare(ar1,ar2){
+            if(ar1>ar2){
+                return -1
+            }else{
+                return 1
+            }
+        }
+        let a = arr.sort(compare)
+        console.log(a);
+        
+        //reverse反排序
+        // console.log(arr.reverse());
+        
+        
+    </script>
+</body>
+</html>
