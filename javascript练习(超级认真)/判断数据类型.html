@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 常用的判断类型方法有  
+        var str = 'srtrt';
+        var num = 123;
+        var boo = true;
+        var arr = [1, 2, 3, 4];
+        var nu = null;
+        var und = undefined;
+        var obj = {
+            name: '白云',
+            age: 12
+        }
+        var f = function (){return 2};
+        var date = new Date()
+        // 1.typeof方式
+        // string
+        // console.log(typeof str);
+        // // number
+        // console.log(typeof num);
+        // // boolean
+        // console.log(typeof boo);
+        // // object不能区分是数组返回的是object
+        // console.log(typeof arr);
+        // // object
+        // console.log(typeof nu);
+        // // undefined 注意不定义变量也会显示undefined
+        // console.log(typeof und);
+        // // object
+        // console.log(typeof obj);
+        // // function
+        // console.log(typeof f);
+        // // object
+        // console.log(typeof date);
+        
+        // 2.instanceof判断对象的，知道对象类型，判断是否是该对象类型可以说所有的引用类型instanceof object
+        // 都返回true
+        console.log(str instanceof Object);//false
+        console.log(num instanceof Object);//false
+        console.log(f instanceof Object);// instanceof可以找到这个对象的继承也就是父类，所以所有的对选哪个instanceof object都是true
+        console.log(arr instanceof Array);
+        //3.使用constructor 所有的数据类型出 null 和undefined都有constructor方法
+        console.dir(str.constructor == String);
+        console.log(num.constructor == Number);
+        console.log(arr.constructor == Object);//false 可以看出用constructor可以避免继承带来的影响
+        // 4.使用toString方法，他是object的内置方法可以返回一个【Object object】的格式的字符串，可以和字符串比较一样用==号最后面的就是你的数据类型
+       console.log(Object.prototype.toString.call('') == '[object String]'); //[object String] 
+       console.log(Object.prototype.toString.call(arr));//[object Array]
+       console.log(Object.prototype.toString.call(num));//[object Number]
+       console.log(Object.prototype.toString.call(nu));//[object Null]
+       console.log(Object.prototype.toString.call(und));//[object Undefined]
+       console.log(Object.prototype.toString.call(obj));//[object Object]
+       console.log(Object.prototype.toString.call(f));//[object Function]
+       console.log(Object.prototype.toString.call(date))//[object Date]
+        
+        
+         
+    </script>
+</body>
+
+</html>

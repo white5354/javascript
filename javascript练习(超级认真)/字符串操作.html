@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // \t制表符就是空格 \\转义\然后显示
+        var str = 'ba\\iyun'
+        console.log(str);
+        let site = 'houdunren'
+        let user = 'beijin'
+        // ``支持换行操作，打印也会换行
+        console.log(`${site}
+        nbai`);
+        // 注意``可以嵌套使用
+        let obj = [{
+            title:'css教程',
+            price:10
+        },{
+            title:'js教程',
+            price:1
+        },{
+            title:'html教程',
+            price:2
+        }];
+        // map方法返回时要加return切记切记
+        function template(){
+            return  `<ul>
+        ${obj.map((item)=>{
+            return`
+            <li>${item.title}</li>`}
+        ).join("")}
+        </ul>`
+
+//         return `<ul>
+//       ${lessons.map((item)=>`
+//           <li>${item.title}</li>
+//       `).join('')}
+//   </ul>`;
+        }
+
+        document.body.innerHTML = template();
+        
+    </script>
+</body>
+</html>
