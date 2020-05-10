@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            border: 1px solid #000;
+            max-width: 300px;
+            /* float: left; */
+            /* 行内快元素，可以设置宽高，设置margin padding 
+             普通的行内元素不能设置宽高margin padding ，所以行内快元素可以让元素显示到一行也可以设置其他属性*/
+            /* display: inline-block; */
+            width: min-content;
+            margin: auto;
+        }
+        span{
+            height: 200px;
+            width: 200px;
+            /* display: inline-block; */
+            margin-top: 10px;
+        }
+        .demo{
+            border: 1px solid #000;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <span>
+        白云
+    </span>
+    <span>
+        王思雨
+    </span>
+    <div class="demo">
+        我是白云
+    </div>
+    <p>Sonme text[...]</p>
+    <figure class="father">
+        <img src="./demo.jpg" alt="" max-width: inherit;>
+        <figcaption>
+            练习页面布局，首先页面的高度可以又子元素撑开，但是呢，
+            width却没办法和子元素的宽度一样
+            这正是我要解决的,在css中width:min-content可以让盒子的宽等于容器内部最大的不可断行元素宽度
+            然后使用margin：auto实现水平居中
+        </figcaption>
+        <!-- 现在想让父元素的div等于图片的宽度 -->
+    </figure>
+    <p>Sonme text[...]</p>
+</body>
+</html>
