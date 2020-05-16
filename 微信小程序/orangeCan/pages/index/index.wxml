@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+	<!-- 图片320*240默认 -->
+	<image src="../../image/头像.jpg" class="img">
+	</image>
+	<text class="title">Hello 橘子罐头</text>
+	<text class="jounery-btn" >开启小程序之旅</text>
+</view>

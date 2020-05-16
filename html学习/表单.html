@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>表单提交</legend>
+            <input type="text" name="name">
+            <input type="text" name="age">
+            <input  name="" id="" pattern="[A-z]{5}" oninvalid="valid('是多少')" required>
+            <input type="submit">
+            <label for="">
+                <select id="shuiguo" name="shuguo[]" id="">
+                    <optgroup label="王思雨爱吃">
+                        <option value="1">香蕉</option>
+                        <option value="2">橘子</option>
+                    </optgroup>
+                    <optgroup label="王思雨不爱吃">
+                        <option value="1">梨</option>
+                        <option value="2">桃子</option>
+                    </optgroup>
+                    
+                </select>
+            </label>
+           
+        </fieldset>
+       
+    </form>
+<label for="">标题</label>
+<input type="text">
+<label for="">姓名</label>
+<input type="text" value="baiyun" disabled id="input">
+<button onclick="change()">改变</button>
+<button onclick="xiangjiao()">选中香蕉</button>
+<script>
+    function change(){
+        console.log('d')
+        document.getElementById('input').disabled = false
+    }
+    function valid(val){
+        alert(val)
+    }
+    function xiangjiao(){
+        document.getElementById('shuiguo').value=1
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.img {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 10rpx;
+  border-radius: 50%;
+}
+.title{
+  margin-top: 80px;
+  font-size: 37rpx;
+  font-weight: bold;
+  color: #9f4311;
+}
+.jounery-btn{
+width: 300rpx;
+height: 80rpx;
+border: 1px solid #dddddd;
+border-radius: 5px;
+margin-top: 160rpx;
+text-align: center;
+line-height: 80rpx;
+}

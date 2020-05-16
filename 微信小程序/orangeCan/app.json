@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/post/post",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/welcome/welcome"
+  
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ecc0a8",
+    "navigationBarTitleText": "Orange Can",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
