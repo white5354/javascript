@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body ng-app="hd">
+    <script src="../org/angular.js"></script>
+    <div ng-controller="Ctrl">
+        {{obj.name}}
+        <button ng-click="fn()">点我</button>
+    </div>
+<script>
+    var a = angular.module("hd", []);
+    a.controller("Ctrl", ["$scope", function($scope){
+        console.log($scope);
+        $scope.num = 12
+        $scope.name = "baiyun";
+        $scope.obj = {
+            name:'fafdf'
+        }
+        var arr = "wangsiyu"
+        $scope.add = function() {
+            Math.min($scope.num ,6)
+        }
+    }])
+
+</script>
+    
+</body>
+</html>
