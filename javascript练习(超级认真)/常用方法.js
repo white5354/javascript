@@ -61,11 +61,10 @@ arr1[1] = "ds"
 arr1[3][0] = "dsd"
 
 
-var arr3 = arr.slice();
+var arr3 = arr.slice(); // slice也是一维浅拷贝
 // console.log(arr3);
 
 // 多维数组还是采用递归深拷贝
-
 var a1 = [1,23,4,5,[3,45]];
 var a2 = deepclone(a1);
 a2[4][0] = "曹尼玛";
