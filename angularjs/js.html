@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <link rel="stylesheet" href="./org/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    
+    <div class="show-login-btn">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>show-login-btn
+    </div>
+    <div class="login-box">
+       <div class="hide-login-btn"><i class="fa fa-close fa-2x"></i></div>
+        <form action="">
+            <h1>Welcome</h1>
+            <input class="text-input" type="text" value="" placeholder="UserName">
+            <input class="text-input" type="password" value="" placeholder="Password">
+            <input class="login-btn" type="button" value="Login" >
+        </form>
+    </div>
+    <script>
+        $(".show-login-btn").on("click", function() {
+            $(".login-box").toggleClass("show-login")
+        })
+        $(".hide-login-btn").on("click", function() {
+            $(".login-box").toggleClass("show-login")
+        })
+    </script>
 </body>
 </html>

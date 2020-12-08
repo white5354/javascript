@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   
+    <meta charset="utf-8">
+    <link href="../org/master.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../1.js"></script>
+    <script src="../org/angular.js" charset="utf-8"></script>
+    <script>
+        jQuery(function () {
+            var options = {  //所有属性都可选
+                duration: 500,  //单张图片轮播持续时间
+                interval: 5000,  //图片轮播结束到下一张图片轮播开始间隔时间
+                showImgNum: 10,  //同时展示的图片数量，此参数最大值=Math.floor(画廊宽度/一张图片宽度)
+                galleryClass: "gallery"  //画廊class
+            }
+            $(".wrapper").gallery(options);
+        });
+        let mod = angular.module('test', []);
+        mod.controller('main', function ($scope) {
+            $scope.ceshi=[{
+                id:1,
+                name:'系统首页'
+            },{
+                id:2,
+                name:'客户信息'
+            },{
+                id:3,
+                name:'客户信息2'
+            },{
+                id:4,
+                name:'客户信息3'
+            },{
+                id:5,
+                name:'客户信息4'
+            },{
+                id:6,
+                name:'系统首页2'
+            },{
+                id:7,
+                name:'客户信息5'
+            }];
+        });
+    </script>
 </head>
-<body ng-app="hd">
-    <script src="../org/angular.js"></script>
-    <div ng-controller="Ctrl">
-        {{obj.name}}
-        <button ng-click="fn()">点我</button>
+<body ng-app="test">
+<div class="wrapper" ng-controller="main">
+    <div class="gallery">
+        <ul>
+            <li ng-repeat="names in ceshi">
+                <span style="height: 50px">{{names.name}}</span>
+            </li>
+        </ul>
     </div>
-<script>
-    var a = angular.module("hd", []);
-    a.controller("Ctrl", ["$scope", function($scope){
-        console.log($scope);
-        $scope.num = 12
-        $scope.name = "baiyun";
-        $scope.obj = { 
-            name:'fafdf'
-        }
-        var arr = "wangsiyu"
-        $scope.add = function() {
-            Math.min($scope.num ,6)
-        }
-    }])
-   都是
-   
-</script>
-    
+</div>
 </body>
 </html>

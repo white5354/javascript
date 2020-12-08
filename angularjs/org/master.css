@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    position: relative;
+    width: 1050px;
+    margin: auto;
+}
+
+.wrapper .gallery {
+    width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.wrapper .gallery ul {
+    position: relative;
+    left: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.wrapper .gallery ul li {
+    text-align: center;
+    float: left;
+    padding: 0 8px;
+    background-color: #ccc;
+    border-radius: 2px;
+    width: 80px
+}
+
+.wrapper .prev,
+.wrapper .next {
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    line-height: 25px;
+    /*text-align: center;*/
+    /*border-radius: 50%;*/
+    /*background-color: #d8d4d5;*/
+}
+
+.wrapper .prev {
+    left: 0px;
+}
+
+.wrapper .next {
+    right: 0px;
+}
+
+.wrapper span:hover {
+    background-position: 0px -70px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa {
+            width: 300px;
+
+        }
+
+        .son {
+            display: inline-block;
+            border: 1px solid #000;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app="vapp" ng-controller="ctrl">
+        <div class="fa">
+            <div class="child">
+                <div class="son" ng-repeat="row in de track by $index" ng-style="{'width': row.width + 'px'}">
+                    {{row.name}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../org/angular.js"></script>
+    <script>
+        var app = angular.module("vapp", []);
+        app.controller("ctrl", function ($scope) {
+            $scope.de = [{
+                name: "project1",
+                width: 80
+            }, {
+                name: "project2",
+                width: 100
+            }, {
+                name: "project3",
+                width: 120
+            }]
+        })
+
+    </script>
+    <script>
+        debugger
+
+    </script>
+</body>
+
+</html>
